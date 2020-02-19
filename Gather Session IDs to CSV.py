@@ -10,22 +10,15 @@ import csv
 outputFile=open('sessions.csv','w',newline='', encoding='utf-8')
 outputWriter=csv.writer(outputFile)
 outputWriter.writerow(['SESSION ID:', 'CREATED AT:', 'UPDATED AT:', 'SEGMENTS', 'COUNTRY:'])
-MILLISECONDS = 1000
 
 client=Crisp()
-
 client.authenticate(api_key,api_token)
-
 print('I should be authenticated to the CRISP API')
 
-
+MILLISECONDS = 1000
 conversation_data=[]
-messages_data=[]
-
 i=1
-
-
-                                     
+                                  
 while bool(client.website.list_conversations(website_id,i)):
     
     current_batch_of_conversations=client.website.list_conversations(website_id,i)
@@ -47,9 +40,7 @@ for i in conversation_data:
     except:
         current_location="N/A - COUNTRY NOT FOUND"
     
-    #outputWriter.writerow([1,2,3,4,5])
     outputWriter.writerow([current_session_id,timestamp_create,timestamp_update,current_segment,current_location])
-    #print('SESSION ID: ' + i['session_id'] + ' CREATED AT: '+ str(timestamp_create) + ' UPDATED AT: ' +str(timestamp_update)+ ' SEGMENT: ' +str(i['meta']['segments']) + ' COUNTRY: ' +str(i['meta']['device']['geolocation']['country']))
 print('After the loop, everything should be done')
 outputFile.close()
                           
