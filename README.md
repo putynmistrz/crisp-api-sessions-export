@@ -8,6 +8,16 @@ https://crisp.chat/en/
 
 It is a pretty good tool with a complex API, but it was lacking in some reporting/analitical functionality. That's why I have created this simple python app.
 
+# Requirements
+
+To run this app, you need to have following:
+1. Python 3.0+ environment on your computer installed
+2. CRISP API keys, tokens and website_id input in the "crisp_info.py" file
+3. CRISP API python wrapper installed: do this via GIT, and not via pip method. pip method doesn't work for some reason
+4. Knowledge about how CRISP API works:
+read this: https://docs.crisp.chat/api/v1/
+and this: https://github.com/crisp-im/python-crisp-api
+
 # How is session data stored in CRISP?
 
 Session data is paginated. Other than using this app, it is really difficult to gather all of the pages and merge them into 1 file.
