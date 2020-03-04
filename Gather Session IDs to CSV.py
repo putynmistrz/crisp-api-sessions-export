@@ -4,7 +4,7 @@ from random import *
 import json
 from datetime import datetime
 # api credentials stored in another file for security reasons - have to have those two variables defined in another file
-from api_credentials import api_key, api_token,website_id
+from crisp_info import api_key, api_token,website_id
 import csv
 
 outputFile=open('sessions.csv','w',newline='', encoding='utf-8')
